@@ -38,5 +38,12 @@ namespace LoginPageTest
             RPage.Show();
             this.Close();
         }
+
+        private void LoginBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MemberPannel mpage = new MemberPannel();
+            mpage.Show();
+            this.Close();
+        }
     }
 }

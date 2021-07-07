@@ -9,7 +9,26 @@ namespace LoginPageTest.Core
 {
     class RelayCommand : ICommand
     {
-        private Action<object> Execute;
-        private Func<object, bool> CanExecute;
+        private Action<object> _Execute;
+        private Func<object, bool> _CanExecute;
+
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
+        public RelayCommand(Action<object> Execute , Func<object , bool> CanExecute = null)
+        {
+            _Execute = Execute;
+            _CanExecute = CanExecute;
+        }
+        public bool CanExecute(object parameter)
+        {
+            return _CanExecute == null || _CanExecute(parameter);
+        }
+        public void Execute(object parameter)
+        {
+            _Execute(parameter);
+        }
     }
 }

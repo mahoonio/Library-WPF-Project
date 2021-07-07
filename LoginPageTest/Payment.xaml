@@ -1,4 +1,4 @@
-﻿<Window x:Class="LoginPageTest.Register"
+﻿<Window x:Class="LoginPageTest.Payment"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -59,7 +59,7 @@
                              Margin="20,0"
                              MaxLength="4"
                              />
-                    <TextBox HorizontalAlignment="Center"
+                    <TextBox HorizontalAlignment="Center" 
                              VerticalAlignment="Center"
                                  Foreground="White"
                                  Width="50"
@@ -95,7 +95,7 @@
                            FontFamily="Helvetica"
                            FontSize="20"
                            HorizontalAlignment="Center"
-                           Margin="0 , 15"/>
+                           Margin="0 , 9"/>
                     <TextBox Width="150"
                              Height="25"
                              MaxLength="4"
@@ -149,13 +149,13 @@
             </Grid>
             <Grid Grid.Row="4">
                 <Button x:Name="PaymentBtn" Width="100" Height="45" Content="PAY"/>
-                <Image Height="200" Source="D:\AP-projects\TestXaml\LoginPageTest\Images\Wallet.png" Margin="258,-142,-258,42" RenderTransformOrigin="0.5,0.5" >
+                <Image Height="250" Source="D:\AP-projects\TestXaml\LoginPageTest\Images\Wallet.png" Margin="269,-144,-269,-6" RenderTransformOrigin="0.479,0.25" >
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
                             <SkewTransform AngleX="10.787"/>
                             <RotateTransform/>
-                            <TranslateTransform X="5.141"/>
+                            <TranslateTransform X="-6.766"/>
                         </TransformGroup>
                     </Image.RenderTransform>
                 </Image>

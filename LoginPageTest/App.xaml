@@ -7,6 +7,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ModernButtonTheme.xaml"/>
+                <ResourceDictionary Source="D:\AP-projects\TestXaml\LoginPageTest\Theme\MenuButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

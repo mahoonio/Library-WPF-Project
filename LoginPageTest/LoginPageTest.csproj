@@ -67,6 +67,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BackEndClasses.cs" />
     <Compile Include="Core\ObserveableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="MemberPannel.xaml.cs">
@@ -94,6 +95,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Theme\MenuButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ModernButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -103,6 +108,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\TextBoxTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,7 +148,6 @@
     <Folder Include="MVM\Model\" />
     <Folder Include="MVM\ViewModel\" />
     <Folder Include="MVM\View\" />
-    <Folder Include="Theme\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="book.png" />

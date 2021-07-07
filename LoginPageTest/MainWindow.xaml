@@ -79,7 +79,7 @@
                             Height="2"
                             Background="White"/>
                     <StackPanel Orientation="Horizontal" Margin="0 , 50">
-                        <Button Width="100" Height="40" Content="LOGIN" Margin="60,0,60,0"/>
+                        <Button x:Name="LoginBtn" Width="100" Height="40" Content="LOGIN" Margin="60,0,60,0" Click="LoginBtn_Click"/>
                         <Button x:Name="Registerbtn" Width="100" Height="40" Content="REGISTER" Click="Registerbtn_Click"/>
                     </StackPanel>
                 </StackPanel>

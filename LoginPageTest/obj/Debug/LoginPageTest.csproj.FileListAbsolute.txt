@@ -32,3 +32,6 @@ D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Register.g.cs
 D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Register.baml
 D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\MemberPannel.g.cs
 D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Payment.g.cs
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Theme\MenuButtonTheme.baml
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\MemberPannel.baml
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Payment.baml
