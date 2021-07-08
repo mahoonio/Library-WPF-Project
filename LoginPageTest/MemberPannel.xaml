@@ -30,34 +30,32 @@
                 FontSize="22"
                 Margin="20,0,0,0"/>
             <StackPanel Grid.Row="1">
-                <RadioButton Content="Library books"
+                <RadioButton Content="Books"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
                              IsChecked="True"
-                             Command="{Binding LibraryBCommand}"/>
-                <RadioButton Content="My books"
+                             Command="{Binding LibraryBCommand}" />
+                <RadioButton Content="Members"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding MyBooksCommand}"/>
-                <RadioButton Content="Membership"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
                 <RadioButton Content="Wallet"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding WalletCommand}"/>
                 <RadioButton Content="Edit Profile"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding EditCommand}"/>
+                
 
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Vertical">

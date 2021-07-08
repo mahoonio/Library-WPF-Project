@@ -17,6 +17,12 @@
             <DataTemplate DataType="{x:Type viewModel:MyBooksViewModel}">
                 <view:MyBooksView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:WalletViewModel}">
+                <view:WalletView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:EditViewModel}">
+                <view:EditView/>
+            </DataTemplate>
             
         </ResourceDictionary>
     </Application.Resources>

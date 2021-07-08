@@ -73,14 +73,22 @@
     <Compile Include="MemberPannel.xaml.cs">
       <DependentUpon>MemberPannel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\ViewModel\EditViewModel.cs" />
     <Compile Include="MVVM\ViewModel\LIbraryBViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MyBooksViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\WalletViewModel.cs" />
+    <Compile Include="MVVM\View\EditView.xaml.cs">
+      <DependentUpon>EditView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\LibraryBooksView.xaml.cs">
       <DependentUpon>LibraryBooksView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\MyBooksView.xaml.cs">
       <DependentUpon>MyBooksView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\WalletView.xaml.cs">
+      <DependentUpon>WalletView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Payment.xaml.cs">
       <DependentUpon>Payment.xaml</DependentUpon>
@@ -104,11 +112,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\EditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\LibraryBooksView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\MyBooksView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\WalletView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,6 +181,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="MainW.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MVVM\View\Wallet-rafiki.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

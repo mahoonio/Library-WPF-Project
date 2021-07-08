@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("mainw.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("mvvm/view/wallet-rafiki.png")]
 
 

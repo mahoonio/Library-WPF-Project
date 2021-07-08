@@ -43,7 +43,7 @@
                 </StackPanel>
                 <StackPanel Grid.Row="1">
                     <StackPanel  Orientation="Horizontal" Margin="75,22,0,0">
-                        <TextBox FontFamily="helvetica" FontWeight="Light" 
+                        <TextBox x:Name="UserNameBox" FontFamily="helvetica" FontWeight="Light" 
                              Text="Username"                                 
                              HorizontalAlignment="Center"                                             
                              FontSize="20"

@@ -12,8 +12,12 @@ namespace LoginPageTest.MVVM.ViewModel
     {
         public RelayCommand LibraryBCommand { get; set; }
         public RelayCommand MyBooksCommand { get; set; }
+        public RelayCommand WalletCommand { get; set; }
+        public RelayCommand EditCommand { get; set; }
         public LIbraryBViewModel HomeVm { get; set; }
         public MyBooksViewModel MybooksVm { get; set; }
+        public WalletViewModel WalletVm { get; set; }
+        public EditViewModel EditVm { get; set; }
         private object _currentView;
 
         public object CurrentView
@@ -30,6 +34,8 @@ namespace LoginPageTest.MVVM.ViewModel
         {
             HomeVm = new LIbraryBViewModel();
             MybooksVm= new MyBooksViewModel();
+            WalletVm = new WalletViewModel();
+            EditVm = new EditViewModel();
             CurrentView = HomeVm;
             LibraryBCommand = new RelayCommand(o =>
             {
@@ -38,6 +44,14 @@ namespace LoginPageTest.MVVM.ViewModel
             MyBooksCommand = new RelayCommand(o =>
             {
                 CurrentView = MybooksVm;
+            });
+            WalletCommand = new RelayCommand(o =>
+            {
+                CurrentView = WalletVm;
+            });
+            EditCommand = new RelayCommand(o =>
+            {
+                CurrentView = EditVm;
             });
         }
     }

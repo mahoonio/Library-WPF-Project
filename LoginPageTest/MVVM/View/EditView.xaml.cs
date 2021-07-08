@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using System;
+using Microsoft.Win32;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,41 +12,32 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Microsoft.Win32;
-using System.IO;
-
-namespace LoginPageTest
+namespace LoginPageTest.MVM.View
 {
     /// <summary>
-    /// Interaction logic for Register.xaml
+    /// Interaction logic for EditView.xaml
     /// </summary>
-    public partial class Register : Window
+    public partial class EditView : UserControl
     {
-       
-        public Register()
+        public EditView()
         {
             InitializeComponent();
         }
-
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-                DragMove();
-        }
-
         
+
 
         private void SetPhotoBtn_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "jpg files (*.jpg))|(*.jpg)|png files (*.png)|(*.png)";
 
-            if(fileDialog.ShowDialog() == true)
+            if (fileDialog.ShowDialog() == true)
             {
                 var UriSource = new Uri(System.IO.Path.GetFullPath(fileDialog.FileName));
                 ProfilePhoto.Source = new BitmapImage(UriSource);
-                
+
             }
 
         }
@@ -58,7 +51,7 @@ namespace LoginPageTest
     )
             {
                 User.users.Add(new User(usernamebox1.Text, emailbox.Text, passbox.Password, phonebox.Text));
-                this.Hide();
+                
             }
             else
             {

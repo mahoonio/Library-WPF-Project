@@ -10,25 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LoginPageTest
+namespace LoginPageTest.MVM.View
 {
     /// <summary>
-    /// Interaction logic for MemberPannel.xaml
+    /// Interaction logic for WalletView.xaml
     /// </summary>
-    public partial class MemberPannel : Window
+    public partial class WalletView : UserControl
     {
-        public MemberPannel()
+        public WalletView()
         {
             InitializeComponent();
         }
-
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-                DragMove();
-        }
-
     }
 }

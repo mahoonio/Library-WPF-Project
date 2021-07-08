@@ -29,5 +29,25 @@ namespace LoginPageTest
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void PaymentBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (methods.IsValidCartNumber(card1box.Text + card2box.Text + card3box.Text + card4box.Text)
+                && methods.IsValidCVV(cvv2box.Text)
+                && methods.IsValidYearAndMonth(yearbox.Text, monthbox.Text)
+    )
+            {
+                MessageBox.Show("your payment was successful");
+            }
+            else
+            {
+                MessageBox.Show("Wrong information");
+            }
+        }
     }
 }

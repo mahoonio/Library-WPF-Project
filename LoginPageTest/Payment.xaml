@@ -50,16 +50,16 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
                             HorizontalAlignment="Center">
-                    <TextBox HorizontalAlignment="Center"
+                    <TextBox x:Name="card1box" HorizontalAlignment="Center"
                              VerticalAlignment="Center"
                                  Foreground="White"
                                  Width="50"
                                  Height="25"
                              BorderThickness="0"
                              Margin="20,0"
-                             MaxLength="4"
+                             MaxLength="4" TextChanged="TextBox_TextChanged"
                              />
-                    <TextBox HorizontalAlignment="Center" 
+                    <TextBox x:Name="card2box" HorizontalAlignment="Center" 
                              VerticalAlignment="Center"
                                  Foreground="White"
                                  Width="50"
@@ -67,7 +67,7 @@
                              BorderThickness="0"
                              Margin="20,0"
                              MaxLength="4"/>
-                    <TextBox HorizontalAlignment="Center"
+                    <TextBox x:Name="card3box" HorizontalAlignment="Center"
                              VerticalAlignment="Center"
                                  Foreground="White"
                                  Width="50"
@@ -75,7 +75,7 @@
                              BorderThickness="0"
                              Margin="20,0"
                              MaxLength="4"/>
-                    <TextBox HorizontalAlignment="Center"
+                    <TextBox x:Name="card4box" HorizontalAlignment="Center"
                              VerticalAlignment="Center"
                                  Foreground="White"
                                  Width="50"
@@ -96,7 +96,7 @@
                            FontSize="20"
                            HorizontalAlignment="Center"
                            Margin="0 , 9"/>
-                    <TextBox Width="150"
+                    <TextBox x:Name="cvv2box" Width="150"
                              Height="25"
                              MaxLength="4"
                              HorizontalAlignment="Center"
@@ -133,13 +133,13 @@
                                   Margin="0 , 0 , -5 , 0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <TextBox Width="50"
+                        <TextBox x:Name="yearbox" Width="50"
                              Height="25"
                              MaxLength="2"
                              HorizontalAlignment="Center"
                              VerticalAlignment="Center"
                                  Margin="0,0,25,0"/>
-                        <TextBox Width="50"
+                        <TextBox x:Name="monthbox" Width="50"
                              Height="25"
                              MaxLength="2"
                              HorizontalAlignment="Center"
@@ -148,8 +148,8 @@
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="4">
-                <Button x:Name="PaymentBtn" Width="100" Height="45" Content="PAY"/>
-                <Image Height="250" Source="Images\Wallet.png" Margin="269,-144,-269,-6" RenderTransformOrigin="0.479,0.25" >
+                <Button x:Name="PaymentBtn" Width="100" Height="45" Content="PAY" Click="PaymentBtn_Click"/>
+                <Image Height="250" Source="Images\Wallet.png" Margin="556,-144,-269,-6" RenderTransformOrigin="0.479,0.25" >
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
