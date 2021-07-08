@@ -73,6 +73,15 @@
     <Compile Include="MemberPannel.xaml.cs">
       <DependentUpon>MemberPannel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\ViewModel\LIbraryBViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\MyBooksViewModel.cs" />
+    <Compile Include="MVVM\View\LibraryBooksView.xaml.cs">
+      <DependentUpon>LibraryBooksView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\MyBooksView.xaml.cs">
+      <DependentUpon>MyBooksView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Payment.xaml.cs">
       <DependentUpon>Payment.xaml</DependentUpon>
     </Compile>
@@ -95,6 +104,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\LibraryBooksView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\MyBooksView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Theme\MenuButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,10 +125,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Register.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Theme\TextBoxTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,12 +158,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="MVM\Model\" />
-    <Folder Include="MVM\ViewModel\" />
-    <Folder Include="MVM\View\" />
+    <Folder Include="MVVM\Model\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MainW.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

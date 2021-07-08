@@ -3,10 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:LoginPageTest.MVVM.ViewModel"
         xmlns:local="clr-namespace:LoginPageTest" xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d" ResizeMode="NoResize" AllowsTransparency="True" Background="Transparent"
         Height="600" Width="920" WindowStyle="None"
         MouseDown ="Window_MouseDown"  WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
     <Border Background="#272535" CornerRadius="20">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -19,18 +23,26 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock
-                Text="Elysian"
+                Text="Welcome"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
                 Foreground="White"
                 FontSize="22"
                 Margin="20,0,0,0"/>
             <StackPanel Grid.Row="1">
+                <RadioButton Content="Library books"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding LibraryBCommand}"/>
                 <RadioButton Content="My books"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding MyBooksCommand}"/>
                 <RadioButton Content="Membership"
                              Height="50"
                              Foreground="White"
@@ -48,11 +60,12 @@
                              Style="{StaticResource MenuButtonTheme}"/>
 
             </StackPanel>
-            <TextBox Width="250"
-                     VerticalContentAlignment="Center"
-                     HorizontalAlignment="Left"
-                     Margin="5"
-                     Grid.Column="1"/>
+            <StackPanel Grid.Column="1" Orientation="Vertical">
+                
+            </StackPanel>
+            <ContentControl Grid.Row="1" Grid.Column="1"
+                            Content="{Binding CurrentView }"/>
+
         </Grid>
     </Border>
 </Window>

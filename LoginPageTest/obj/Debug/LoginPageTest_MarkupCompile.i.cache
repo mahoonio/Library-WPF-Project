@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\AP-projects\TestXaml\LoginPageTest\App.xaml
-7-1595949579
+8-1359033331
 
-12-100411049
+171276875164
 17-375792217
-MainWindow.xaml;MemberPannel.xaml;Theme\MenuButtonTheme.xaml;ModernButtonTheme.xaml;Payment.xaml;Register.xaml;Theme\TextBoxTheme.xaml;
+MainWindow.xaml;MemberPannel.xaml;MVVM\View\LibraryBooksView.xaml;MVVM\View\MyBooksView.xaml;Theme\MenuButtonTheme.xaml;ModernButtonTheme.xaml;Payment.xaml;Register.xaml;
 
 True
 

@@ -35,3 +35,8 @@ D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Payment.g.cs
 D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Theme\MenuButtonTheme.baml
 D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\MemberPannel.baml
 D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Payment.baml
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\MVVM\View\LibraryBooksView.g.cs
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\MVVM\View\LibraryBooksView.baml
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\MVVM\View\MyBooksView.g.cs
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\MVVM\View\MyBooksView.baml

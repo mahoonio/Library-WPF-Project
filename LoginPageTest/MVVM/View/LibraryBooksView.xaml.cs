@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace LoginPageTest.MVM.View
+{
+    /// <summary>
+    /// Interaction logic for LibraryBooksView.xaml
+    /// </summary>
+    public partial class LibraryBooksView : UserControl
+    {
+        public LibraryBooksView()
+        {
+            InitializeComponent();
+        }
+
+        private void SearchBooksBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
+}
