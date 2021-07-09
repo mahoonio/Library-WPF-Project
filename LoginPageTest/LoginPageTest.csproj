@@ -67,6 +67,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Admin-Bank-AddMoney.xaml.cs">
+      <DependentUpon>Admin-Bank-AddMoney.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin-Bank.xaml.cs">
+      <DependentUpon>Admin-Bank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin-books-AddBook.xaml.cs">
+      <DependentUpon>Admin-books-AddBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin-Books.xaml.cs">
+      <DependentUpon>Admin-Books.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin-Workers-AddWorker.xaml.cs">
+      <DependentUpon>Admin-Workers-AddWorker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin-Workers.xaml.cs">
+      <DependentUpon>Admin-Workers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPannel.xaml.cs">
+      <DependentUpon>AdminPannel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BackEndClasses.cs" />
     <Compile Include="Core\ObserveableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
@@ -96,6 +117,34 @@
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
+    <Page Include="Admin-Bank-AddMoney.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin-Bank.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin-books-AddBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin-Books.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin-Workers-AddWorker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin-Workers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminPannel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -184,6 +233,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="MVVM\View\Wallet-rafiki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Admin-rafiki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Work time-amico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Worker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BookAddPic.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

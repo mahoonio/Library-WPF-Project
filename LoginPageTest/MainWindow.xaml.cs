@@ -42,13 +42,19 @@ namespace LoginPageTest
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
             MemberPannel mpage = new MemberPannel();
+            AdminPannel Apage = new AdminPannel();
 
             //inja 3 ta shartha check mishe
 
             if (UserNameBox.Text == "worker")
             {
                 mpage.Show();
-                this.Close();
+                
+            }
+            else if(UserNameBox.Text == "admin")
+            {
+                Apage.Show();
+                
             }
             
 

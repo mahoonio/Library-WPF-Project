@@ -1,5 +1,6 @@
 ﻿
 FD:\AP-projects\TestXaml\LoginPageTest\App.xaml;;
+FD:\AP-projects\TestXaml\LoginPageTest\AdminPannel.xaml;;
 FD:\AP-projects\TestXaml\LoginPageTest\MainWindow.xaml;;
 FD:\AP-projects\TestXaml\LoginPageTest\MemberPannel.xaml;;
 FD:\AP-projects\TestXaml\LoginPageTest\MVVM\View\EditView.xaml;;
@@ -8,4 +9,10 @@ FD:\AP-projects\TestXaml\LoginPageTest\MVVM\View\MyBooksView.xaml;;
 FD:\AP-projects\TestXaml\LoginPageTest\MVVM\View\WalletView.xaml;;
 FD:\AP-projects\TestXaml\LoginPageTest\Payment.xaml;;
 FD:\AP-projects\TestXaml\LoginPageTest\Register.xaml;;
+FD:\AP-projects\TestXaml\LoginPageTest\Admin-Bank.xaml;;
+FD:\AP-projects\TestXaml\LoginPageTest\Admin-Workers.xaml;;
+FD:\AP-projects\TestXaml\LoginPageTest\Admin-Books.xaml;;
+FD:\AP-projects\TestXaml\LoginPageTest\Admin-books-AddBook.xaml;;
+FD:\AP-projects\TestXaml\LoginPageTest\Admin-Bank-AddMoney.xaml;;
+FD:\AP-projects\TestXaml\LoginPageTest\Admin-Workers-AddWorker.xaml;;
 

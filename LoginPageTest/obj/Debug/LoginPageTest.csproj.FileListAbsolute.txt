@@ -59,3 +59,17 @@ D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\MVVM\View\WalletView.g.cs
 D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\MVVM\View\WalletView.baml
 D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\MVVM\View\EditView.g.cs
 D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\MVVM\View\EditView.baml
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\AdminPannel.g.cs
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\AdminPannel.baml
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Admin-Bank.g.cs
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Admin-Bank.baml
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Admin-Workers.g.cs
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Admin-Workers.baml
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Admin-Books.g.cs
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Admin-Books.baml
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Admin-books-AddBook.g.cs
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Admin-books-AddBook.baml
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Admin-Bank-AddMoney.g.cs
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Admin-Workers-AddWorker.g.cs
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Admin-Bank-AddMoney.baml
+D:\AP-projects\TestXaml\LoginPageTest\obj\Debug\Admin-Workers-AddWorker.baml

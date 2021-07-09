@@ -1,0 +1,50 @@
+﻿<Window x:Class="LoginPageTest.Admin_Workers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoginPageTest"
+        mc:Ignorable="d"
+        Title="Admin_Workers" Height="500" Width="800" ResizeMode="NoResize"
+        WindowStyle="None" Background="Transparent" AllowsTransparency="True" 
+        WindowStartupLocation="CenterScreen"  >
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Border CornerRadius="10"  Grid.ColumnSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush x:Name="RegisterPage">
+                        <GradientStop Color="#F7971E" Offset="0.3"/>
+                        <GradientStop Color="#FFD200" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                <Button x:Name="AddWorkerBtn" 
+                        Content="Add Worker" FontFamily="Helvetica"
+                        FontSize="28"
+                        Width="160" Height="80" Margin="0,50"
+                        Background="#ff6a00" Click="AddWorkerBtn_Click"/>
+                <Button x:Name="PayWorkersBtn"
+                        Width="160" Height="80"
+                        FontFamily="helvetica"
+                        FontSize="28"
+                        Content="Pay Workers" Background="#ff6a00" 
+                        Click="PayWorkersBtn_Click"/>
+                <Image Source="Worker.png" Width="200" Height="200"/>
+                <Button x:Name="BackBtn" Content="Back" FontSize="20" Width="80" 
+                        Height="40" 
+                        Background="#ff6a00"
+                        Margin="0,-10,0,0"
+                        Click="BackBtn_Click"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <!--inja bayad list bashe ba dokme hazf vase har item(in sakhte yekam 
+                khodamam daram porsojoo mikonam)-->
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,70 @@
+﻿<Window x:Class="LoginPageTest.Admin_Bank"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoginPageTest"
+        mc:Ignorable="d"
+        Title="Admin_Bank" Height="500" Width="800" ResizeMode="NoResize"
+        WindowStyle="None" Background="Transparent" AllowsTransparency="True" 
+        WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+            <Border CornerRadius="10"  Grid.RowSpan="3">
+                <Border.Background>
+                    <LinearGradientBrush x:Name="RegisterPage">
+                        <GradientStop Color="#000428" Offset="0.0"/>
+                        <GradientStop Color="#004e92" Offset="0.4"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <!--inja bayad mojoodi az back gerefte beshe-->
+                <TextBlock  FontFamily="Helvetica"
+                       FontWeight="Light" FontSize="40"
+                       Text="Library Balance:"
+                       Foreground="White"
+                       Background="Transparent"
+                       Margin="0,0,0,40"/>
+                <!--narges in textblocke payin ro bayad az backend begiri-->
+                <TextBlock Text="50000t" FontFamily="Helvetica"
+                       FontWeight="Bold" FontSize="40"
+                           Foreground="White" 
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                         Margin="0,-20"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <!--inja ham bayad meghdar in text box  ro befresti be backend e admin-bank-pay-->
+                <TextBox x:Name="AdminDepositBox" Text="20000" FontFamily="Helvetica" 
+                         FontWeight="ExtraLight" Width="250" Height="40" Foreground="White"
+                         Background="Transparent" BorderThickness="0" FontSize="28"/>
+                <Border Width="250"
+                            Height="2"
+                            Background="White"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+                <Image Source="Gold.png" Width="200" Height="200" VerticalAlignment="Center" HorizontalAlignment="Center"  />
+                <Button x:Name="AdminBankPay"
+                        Content="Add Money"
+                        Width="125" Height="80"
+                        FontSize="20"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Margin="0 ,-150,20,0"
+                        Click="AdminBankPay_Click"
+                        Background="#a8e0"/>
+                <Button x:Name="BackBtn" Width="125" Height="80"
+                        Content="Back"
+                        HorizontalAlignment="Left"
+                        Margin="0,-80,20,0"
+                        Click="BackBtn_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

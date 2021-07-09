@@ -1,0 +1,52 @@
+﻿<Window x:Class="LoginPageTest.AdminPannel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoginPageTest"
+        mc:Ignorable="d"
+        Title="AdminPannel" Height="500" Width="800" 
+        ResizeMode="NoResize" AllowsTransparency="True"
+        Background="Transparent" WindowStartupLocation="CenterScreen"
+         WindowStyle="None" MouseDown="Window_MouseDown"   >
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border CornerRadius="10"  Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush x:Name="RegisterPage">
+                        <GradientStop Color="#000428" Offset="0.0"/>
+
+                        <GradientStop Color="#004e92" Offset="0.4"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Image Source="Admin-rafiki.png" RenderTransformOrigin="1.658,-0.182" Margin="-39,140,468,-60"/>
+                
+            </Border>
+            <Grid Grid.Row="0">
+                <StackPanel>
+                    <TextBlock Text ="Welcome Admin" 
+                           FontSize ="25" FontWeight="Light"
+                           Foreground="White"
+                           Background="Transparent"
+                           HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="WorkersBtn" Content="Workers" FontSize="28"
+                            Width="200" Height="125" Margin="0 , 0 , 70,0" Click="WorkersBtn_Click"/>
+                    <Button x:Name="BooksBtn"  Content="Books" FontSize="28" Width="200" Height="125" Click="BooksBtn_Click"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel>
+                    <Button x:Name="BankBtn" Content="Bank" FontSize="30" Width="200" Height="125" Click="BankBtn_Click" />
+                    <Button x:Name="BackBtn" Content="Back" Width="100" Height="60" Margin="0 , 0 ,-650,0" Click="BackBtn_Click"/>
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Window>

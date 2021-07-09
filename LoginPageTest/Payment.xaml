@@ -149,7 +149,7 @@
             </Grid>
             <Grid Grid.Row="4">
                 <Button x:Name="PaymentBtn" Width="100" Height="45" Content="PAY" Click="PaymentBtn_Click"/>
-                <Image Height="250" Source="Images\Wallet.png" Margin="556,-144,-269,-6" RenderTransformOrigin="0.479,0.25" >
+                <Image Height="250" Source="Images\Wallet.png" Margin="389,-152,-102,2" RenderTransformOrigin="0.479,0.25" >
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>

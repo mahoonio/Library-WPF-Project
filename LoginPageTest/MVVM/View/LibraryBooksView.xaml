@@ -24,13 +24,33 @@
                 </Border.Background>
             </Border>
             <StackPanel Grid.Column="0">
-                <Button Content="All Books" FontSize="28" Width="150" Height="80" Margin="0 , 20"/>
-                <Button Content="Borrowed Books" FontSize="20" Width="150" Height="80" Margin="0 , 20"/>
-                <Button  Content="Available Books" FontSize="20" Width="150" Height="80" Margin="0 , 20"/>
+                <Button x:Name="AllBookBox" Content="All Books" FontSize="28" Width="150" Height="80" Margin="0 , 20" Click="AllBookBox_Click"/>
+                <Button x:Name="BorrowedBookBox" Content="Borrowed Books" FontSize="20" Width="150" Height="80" Margin="0 , 20" Click="BorrowedBookBox_Click"/>
+                <Button x:Name="AvailableBookBox" Content="Available Books" FontSize="20" Width="150" Height="80" Margin="0 , 20" Click="AvailableBookBox_Click"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <!--list ro bayad inja bezani-->
+                <Grid>
+                    <ScrollViewer>
+                        <ItemsControl ItemsSource="{Binding books, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="{Binding Name}"/>
+                                        <TextBlock Grid.Column="1" Text="{Binding Author}"/>
+                                        <TextBlock Grid.Column="2" Text="{Binding EditonNumber}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
 
+                </Grid>
             </StackPanel>
 
         </Grid>

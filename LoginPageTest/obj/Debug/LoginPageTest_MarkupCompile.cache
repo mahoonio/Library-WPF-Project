@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\AP-projects\TestXaml\LoginPageTest\App.xaml
-10-356190997
+17-1835088769
 
-201832595466
+27429717972
 17-375792217
-MainWindow.xaml;MemberPannel.xaml;MVVM\View\EditView.xaml;MVVM\View\LibraryBooksView.xaml;MVVM\View\MyBooksView.xaml;MVVM\View\WalletView.xaml;Theme\MenuButtonTheme.xaml;ModernButtonTheme.xaml;Payment.xaml;Register.xaml;
+Admin-Bank-AddMoney.xaml;Admin-Bank.xaml;Admin-books-AddBook.xaml;Admin-Books.xaml;Admin-Workers-AddWorker.xaml;Admin-Workers.xaml;AdminPannel.xaml;MainWindow.xaml;MemberPannel.xaml;MVVM\View\EditView.xaml;MVVM\View\LibraryBooksView.xaml;MVVM\View\MyBooksView.xaml;MVVM\View\WalletView.xaml;Theme\MenuButtonTheme.xaml;ModernButtonTheme.xaml;Payment.xaml;Register.xaml;
 
-True
+False
 
