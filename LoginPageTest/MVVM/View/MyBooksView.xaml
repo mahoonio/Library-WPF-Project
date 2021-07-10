@@ -22,13 +22,42 @@
                 </Border.Background>
             </Border>
             <StackPanel Grid.Column="0">
-                <Button Content="All Members" FontSize="26" Width="150" Height="80" Margin="0 , 20"/>
-                <Button Content="Late Returners" FontSize="20" Width="150" Height="80" Margin="0 , 20"/>
-                <Button  Content="Late Payers" FontSize="20" Width="150" Height="80" Margin="0 , 20"/>
+                <Button x:Name="AllMembersBox" Content="All Members" FontSize="26"
+Width="150" Height="80" Margin="0 , 20" Click="AllMembersBox_Click_1"/>
+                <Button x:Name="LateReturnersBox" Content="Late Returners" FontSize="20"
+Width="150" Height="80" Margin="0 , 20" Click="LateReturnersBox_Click"/>
+                <Button x:Name="LatePayersBox" Content="Late Payers" FontSize="20"
+Width="150" Height="80" Margin="0 , 20" Click="LatePayersBox_Click"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <!--list ro bayad inja bezani-->
-                
+                <Grid>
+                    <ScrollViewer>
+                        <ItemsControl ItemsSource="{Binding users, Mode=TwoWay,
+UpdateSourceTrigger=PropertyChanged}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="{Binding
+UserName}"/>
+                                        <TextBlock Grid.Column="1" Text="{Binding
+Email}"/>
+                                        <TextBlock Grid.Column="2" Text="{Binding
+Password}"/>
+                                        <TextBlock Grid.Column="2" Text="{Binding
+PhoneNumber}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
             </StackPanel>
         </Grid>
     </Grid>

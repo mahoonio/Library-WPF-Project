@@ -14,7 +14,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="1">
-                
+
                 <Border CornerRadius="10" Grid.RowSpan ="2">
                     <Border.Background>
                         <ImageBrush ImageSource="MainW.jpg"/>
@@ -62,7 +62,7 @@
 
 
                     <StackPanel  Orientation="Horizontal">
-                        <PasswordBox FontFamily="helvetica" FontWeight="Light" 
+                        <PasswordBox x:Name="PassBox" FontFamily="helvetica" FontWeight="Light" 
                              Password="Password"                                 
                              HorizontalAlignment="Center"                                             
                              FontSize="20"
@@ -83,7 +83,7 @@
                         <Button x:Name="Registerbtn" Width="100" Height="40" Content="REGISTER" Click="Registerbtn_Click"/>
                     </StackPanel>
                 </StackPanel>
-                
+
             </Grid>
         </Grid>
     </Grid>

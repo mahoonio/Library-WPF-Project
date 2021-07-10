@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +18,7 @@ using System.Globalization;
 using System.Collections.ObjectModel;
 namespace LoginPageTest
 {
+
     public class User
     {
         public static List<User> users = new List<User>();
@@ -46,23 +46,17 @@ namespace LoginPageTest
         public static ObservableCollection<Worker> workers { get; set; } = new ObservableCollection<Worker>();
         public Worker(string username, string email, string password, string phonenumber) : base(username, email, password, phonenumber)
         {
-            workers.Add(this);
+            Collections.Workers.Add(this);
         }
     }
-    public class Admin : User//point : chizi ke be shekle uniqe dar nazar gerefte shode email mibashad pas search ham bar asase email has
-                             // // SQL => primery : email (first field)
+    public class Admin //point : chizi ke be shekle uniqe dar nazar gerefte shode email mibashad pas search ham bar asase email has
+                       // // SQL => primery : email (first field)
     {
-        public Admin(string username, string email, string password, string phonenumber) : base(username, email, password, phonenumber) { }
+        public string UserName = "AdminLib123";
+        public string PassWord = "admin";
         public void AddWorker(string name, string mail, string pass, string phone)
         {
             Worker worker = new Worker(name, mail, pass, phone);// dar constructor Worker , Add mishe 
-        }
-        public void RemoveWorker(string mail)
-        {
-            foreach (Worker worker in Worker.workers)
-            {
-                if (mail.Equals(worker.Email)) Worker.workers.Remove(worker);
-            }
         }
 
     }
@@ -80,9 +74,9 @@ namespace LoginPageTest
         public string EditonNumber { get; set; }
 
     }
-
     public static class methods
     {
+
         //// Page : payment.xaml
 
         //field : shomare kart
@@ -186,5 +180,44 @@ namespace LoginPageTest
         //// Page MainWindow.xaml => username and password as the same as in the (Register.xaml)Page
 
     }
+    public static class Extentions
+    {
+        //base codes
+        public static Nullable<int> ParseIntOrNull(this string str)
+        => !string.IsNullOrEmpty(str) ? int.Parse(str) as Nullable<int> : null;
+        public static string ParseStringOrNull(this string str)
+            => !string.IsNullOrEmpty(str) ? str : null;
+
+        // methods for query 
+
+        //public static Worker FindTheWorker(this IEnumerable<Worker> workers2, string InputMail)
+        //=> workers2.Where(x => x.Email.Equals(InputMail)).First();
+
+        //find the workers in login by their username and password
+        //public static Worker FindTheWorker(this IEnumerable<Worker> workers2, string InputUsernName, string InputPass)
+        //{
+        //    Worker worker = Collections.Workers.Where(x => x.UserName.Equals(InputUsernName)).First();
+        //    if (worker.Password.Equals(InputPass)) return worker;
+        //    else return null;
+        //}
+
+    }
+    public static class Collections
+    {
+        internal static ObservableCollection<Book> AllBooks = new ObservableCollection<Book>();
+        internal static ObservableCollection<Book> BorrowedBooks = new ObservableCollection<Book>();
+        internal static ObservableCollection<Book> AvailableBooks = new ObservableCollection<Book>();
+
+        internal static ObservableCollection<Worker> Workers = new ObservableCollection<Worker>();
+
+        internal static ObservableCollection<Member> AllMembers = new ObservableCollection<Member>();
+        internal static ObservableCollection<Member> LatePayerMembers = new ObservableCollection<Member>();
+        internal static ObservableCollection<Member> LateReturnersMembers = new ObservableCollection<Member>();
+    }
+    public static class Fields
+    {
+        internal static double LibMoneyBank = 0;
+    }
+
 
 }

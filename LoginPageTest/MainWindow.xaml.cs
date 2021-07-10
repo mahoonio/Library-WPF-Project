@@ -18,11 +18,13 @@ namespace LoginPageTest
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-  
+
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
+
             InitializeComponent();
         }
 
@@ -41,23 +43,36 @@ namespace LoginPageTest
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
-            MemberPannel mpage = new MemberPannel();
-            AdminPannel Apage = new AdminPannel();
+            MemberPannel mpage;
+            AdminPannel APage;
+
+            //inja bayad thisworkero befrestam baraye view haye wallet va editview befrestam
 
             //inja 3 ta shartha check mishe
 
+            //if (Extentions.FindTheWorker(Collections.Workers, UserNameBox.Text, PassBox.Password) != null)
+            //{
+            //    Worker ThisWorker = (Extentions.FindTheWorker(Collections.Workers, UserNameBox.Text, PassBox.Password));
+            //    mpage = new MemberPannel();
+            //    mpage.Show();
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("there is no worker with these informations");
+            //}
+
             if (UserNameBox.Text == "worker")
             {
+                mpage = new MemberPannel();
                 mpage.Show();
-                
+                this.Close();
             }
-            else if(UserNameBox.Text == "admin")
+            else if(UserNameBox.Text =="admin")
             {
-                Apage.Show();
-                
+                APage = new AdminPannel();
+                APage.Show();
             }
-            
-
 
         }
     }
