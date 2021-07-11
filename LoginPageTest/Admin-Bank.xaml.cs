@@ -22,6 +22,7 @@ namespace LoginPageTest
         public Admin_Bank()
         {
             InitializeComponent();
+            DataContext = Fields.LibMoneyBank;
         }
 
         private void AdminBankPay_Click(object sender, RoutedEventArgs e)

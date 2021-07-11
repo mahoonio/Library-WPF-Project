@@ -25,7 +25,7 @@
             </Border>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">
                 <StackPanel  Margin ="0,50,0,0">
-                    <TextBox x:Name="BookName" Text="Book Name"
+                    <TextBox x:Name="BookNameBox" Text="Book Name"
                          FontFamily="helvetica" 
                          FontSize="20" 
                          Width="235"
@@ -42,7 +42,7 @@
                             Background="White"/>
 
                 <StackPanel Margin ="0,20,0,0">
-                    <TextBox x:Name="Author" Text="Author"
+                    <TextBox x:Name="AuthorBox" Text="Author"
                          FontFamily="helvetica" 
                          FontSize="20" 
                          Width="235"
@@ -59,7 +59,7 @@
                             Background="White"/>
 
                 <StackPanel  Margin ="0,20,0,0">
-                    <TextBox x:Name="Genre" Text="Genre"
+                    <TextBox x:Name="GenreBox" Text="Genre"
                          FontFamily="helvetica" 
                          FontSize="20" 
                          Width="235"
@@ -76,7 +76,7 @@
                             Background="White"/>
 
                 <StackPanel  Margin ="0,20,0,0">
-                    <TextBox x:Name="EditonNumber" Text="Edition Number"
+                    <TextBox x:Name="EditonNumberBox" Text="Edition Number"
                          FontFamily="helvetica" 
                          FontSize="20" 
                          Width="235"

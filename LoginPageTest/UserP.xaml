@@ -1,0 +1,55 @@
+﻿<Window x:Class="LoginPageTest.UserP"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoginPageTest"
+        mc:Ignorable="d"
+        Title="UserP" Height="500" Width="800" ResizeMode="NoResize"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border CornerRadius="10"  Grid.RowSpan="3">
+                <Border.Background>
+                    <LinearGradientBrush  >
+                        <GradientStop Color="#ee0979" Offset="0.0"/>
+                        <GradientStop Color="#ff6a00" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Image Source="Book lover-bro.png" Width="400" Height="400" Margin="195,112,205,-12"/>
+            </Border>
+            <StackPanel>
+                <TextBlock Text="Welcome User!" FontSize="25" Foreground="White" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">
+                <Button x:Name="WalletBtn" Content="Wallet" 
+                        FontFamily="helvetica"
+                        Width="150" Height="100" Margin="10,20,60,0"
+                        FontSize="22" Click="WalletBtn_Click"/>
+                <Button x:Name="MShipBtn" Content="Membership"
+                       FontFamily="helvetica" FontSize="22" Width="150" Height="100" Margin="30,20,65,0"
+                        Click="MShipBtn_Click"/>
+                <Button x:Name="EprofileBtn" Content="Edit Profile" FontFamily="helvetica"
+                       FontSize="22" Width="150" Height="100" Margin="20,20,20,0"
+                        Click="EprofileBtn_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
+                <Button x:Name="LbooksBtn" Content="Library Books" FontFamily="helvetica"
+                       FontSize="22" Width="150" Height="100" Margin="0 , 0 , 330, 0"
+                        Click="LbooksBtn_Click"/>
+                <Button x:Name="Mboo" Content="My Books"
+                        FontSize="22" FontFamily="helvetica" Width="150" Height="100"
+                        Click="Mboo_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center"  Grid.Row="2">
+                <Button Content="Back" x:Name="BackBtn"  Width="100" Height="40" Margin="20"
+                        Click="BackBtn_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -22,9 +22,25 @@ namespace LoginPageTest
         public Admin_Books()
         {
             InitializeComponent();
-        }
+			searchbook.ItemsSource = Collections.AllBooks;
 
-        private void AddBook_Click(object sender, RoutedEventArgs e)
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(searchbook.ItemsSource);
+			view.Filter = UserFilter;
+		}
+		private bool UserFilter(object item)
+		{
+			if (String.IsNullOrEmpty(txtFilter.Text))
+				return true;
+			else
+				return ((item as Book).Name.IndexOf(txtFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+		}
+
+		private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+		{
+			CollectionViewSource.GetDefaultView(searchbook.ItemsSource).Refresh();
+		}
+
+		private void AddBook_Click(object sender, RoutedEventArgs e)
         {
             Admin_books_AddBook Abookadd = new Admin_books_AddBook();
             Abookadd.Show();
@@ -35,4 +51,5 @@ namespace LoginPageTest
             this.Close();
         }
     }
+
 }

@@ -27,6 +27,30 @@ namespace LoginPageTest
         private void AddBtnAB_Click(object sender, RoutedEventArgs e)
         {
             //code e backend e add kardane ketab
+            foreach(Book book in Collections.AllBooks)
+            {
+                if (book.Name.Equals(BookNameBox.Text) && book.Author.Equals(AuthorBox.Text) && book.EditonNumber.Equals(EditonNumberBox.Text))
+                {
+                    book.Numbers++;
+                    book.AvailableNumbers++;
+                    MessageBox.Show("the numbers of book increaseed");
+                    foreach(Book book2 in Collections.AllBooks)
+                    {
+                        if(book2.Name.Equals(BookNameBox.Text) && book2.Author.Equals(AuthorBox.Text) && book2.EditonNumber.Equals(EditonNumberBox.Text))
+                        {
+                            //avaeilable boode va hanooz ham hast
+                        }
+                        else
+                        {
+                            Collections.AvailableBooks.Add(book2);//availabe naboode va ba ezafe shodan be tedadesh alan yekish available hast
+                        }
+                    }
+                    return;
+                }
+            }
+            // dar constructor neveshtam ke vaghti sakhte mishe darja be allbook va availablebook ham add beshe
+            Book book1 = new Book(BookNameBox.Text, AuthorBox.Text, EditonNumberBox.Text);
+            MessageBox.Show("book added");
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)

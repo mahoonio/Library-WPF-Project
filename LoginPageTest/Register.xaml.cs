@@ -57,8 +57,9 @@ namespace LoginPageTest
             && methods.IsValidPassword(passbox.Password)
     )
             {
-                User.users.Add(new User(usernamebox1.Text, emailbox.Text, passbox.Password, phonebox.Text));
-                this.Hide();
+                Collections.AllMembers.Add(new Member(usernamebox1.Text, emailbox.Text, passbox.Password, phonebox.Text));
+                MessageBox.Show("successfull");
+                
             }
             else
             {

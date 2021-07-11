@@ -33,8 +33,7 @@ Width="150" Height="80" Margin="0 , 20" Click="LatePayersBox_Click"/>
                 <!--list ro bayad inja bezani-->
                 <Grid>
                     <ScrollViewer>
-                        <ItemsControl ItemsSource="{Binding users, Mode=TwoWay,
-UpdateSourceTrigger=PropertyChanged}">
+                        <ItemsControl ItemsSource="{Binding members, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Grid>
@@ -44,14 +43,10 @@ UpdateSourceTrigger=PropertyChanged}">
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Text="{Binding
-UserName}"/>
-                                        <TextBlock Grid.Column="1" Text="{Binding
-Email}"/>
-                                        <TextBlock Grid.Column="2" Text="{Binding
-Password}"/>
-                                        <TextBlock Grid.Column="2" Text="{Binding
-PhoneNumber}"/>
+                                        <TextBlock Grid.Column="0" Text="{Binding UserName}"/>
+                                        <TextBlock Grid.Column="1" Text="{Binding Email}"/>
+                                        <TextBlock Grid.Column="2" Text="{Binding Password}"/>
+                                        <TextBlock Grid.Column="2" Text="{Binding PhoneNumber}"/>
                                     </Grid>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>

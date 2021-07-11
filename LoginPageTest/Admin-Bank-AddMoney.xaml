@@ -69,7 +69,7 @@
                             HorizontalAlignment="Center">
                     <TextBox x:Name="card1box" HorizontalAlignment="Center"
                              VerticalAlignment="Center"
-                                 Foreground="White"
+                                 Foreground="Black"
                                  Width="50"
                                  Height="25"
                              BorderThickness="0"
@@ -78,7 +78,7 @@
                              />
                     <TextBox x:Name="card2box" HorizontalAlignment="Center" 
                              VerticalAlignment="Center"
-                                 Foreground="White"
+                                 Foreground="Black"
                                  Width="50"
                                  Height="25"
                              BorderThickness="0"
@@ -86,7 +86,7 @@
                              MaxLength="4"/>
                     <TextBox x:Name="card3box" HorizontalAlignment="Center"
                              VerticalAlignment="Center"
-                                 Foreground="White"
+                                 Foreground="Black"
                                  Width="50"
                                  Height="25"
                              BorderThickness="0"
@@ -94,7 +94,7 @@
                              MaxLength="4"/>
                     <TextBox x:Name="card4box" HorizontalAlignment="Center"
                              VerticalAlignment="Center"
-                                 Foreground="White"
+                                 Foreground="Black"
                                  Width="50"
                                  Height="25"
                              BorderThickness="0"
@@ -117,6 +117,7 @@
                              Height="25"
                              MaxLength="4"
                              HorizontalAlignment="Center"
+                             Foreground="Black"
                              VerticalAlignment="Center"/>
                 </StackPanel>
 
@@ -152,14 +153,16 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBox x:Name="yearbox" Width="50"
                              Height="25"
-                             MaxLength="2"
+                             MaxLength="4"
                              HorizontalAlignment="Center"
+                                 Foreground="Black"
                              VerticalAlignment="Center"
                                  Margin="0,0,25,0"/>
                         <TextBox x:Name="monthbox" Width="50"
                              Height="25"
                              MaxLength="2"
                              HorizontalAlignment="Center"
+                                 Foreground="Black"
                              VerticalAlignment="Center"/>
                     </StackPanel>
                 </StackPanel>
@@ -168,7 +171,7 @@
                 <Button x:Name="AddMoneyBtn" Width="100" Height="45" Content="Add Money" Click="AddMoneyBtn_Click"/>
                 <Button x:Name="BackBtn" Content="Back" Width="100" Height="40" Margin="0, 0 ,700,0"
                         Click="BackBtn_Click"/>
-                <Image Height="250" Source="Images\Wallet.png" Margin="405,-164,-118,14" RenderTransformOrigin="0.479,0.25" >
+                <Image Height="250" Source="Images\Wallet.png" Margin="395,-164,-118,14" RenderTransformOrigin="0.479,0.25" >
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>

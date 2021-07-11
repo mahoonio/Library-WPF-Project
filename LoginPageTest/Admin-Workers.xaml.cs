@@ -21,26 +21,16 @@ namespace LoginPageTest
 
 	public class Person
 	{
-		public string name { get; set; }
-		public string LastName { get; set; }
-		public Person(string a, string b)
-		{
-			name = a;
-			LastName = b;
-		}
+
 	}
 	public partial class Admin_Workers : Window
     {
-		public ObservableCollection<Person> people { get; set; }
+
 
 		public Admin_Workers()
 		{
-			people = new ObservableCollection<Person>();
-			people.Add(new Person("narges", "masha"));
-			people.Add(new Person("mahan", "mahmoodi"));
-			people.Add(new Person("Ali", "Heydari"));
 			InitializeComponent();
-			cm.ItemsSource = people;
+			cm.ItemsSource = Collections.Workers;
 		}
 		private void btnPrevious_Click(object sender, RoutedEventArgs e)
 		{
@@ -55,17 +45,15 @@ namespace LoginPageTest
 		}
 		private void btnBlue_Click(object sender, RoutedEventArgs e)
 		{
-			for (int i = 0; i < people.Count; i++)
+			for (int i = 0; i < Collections.Workers.Count; i++)
 			{
-				var k = (Person)cm.SelectedItem;
+				var k = (Worker)cm.SelectedItem;
 				if (k != null)
 				{
-					string l = k.name;
-					Console.WriteLine(l);
-
-					if (people[i].name.Equals(l)) ;
+					string l = k.UserName;
+					if (Collections.Workers[i].UserName.Equals(l))
 					{
-						people.Remove(k);
+						Collections.Workers.Remove(k);
 						MessageBox.Show("worker is removed");
 						return;
 					}
@@ -82,8 +70,25 @@ namespace LoginPageTest
 
         private void PayWorkersBtn_Click(object sender, RoutedEventArgs e)
         {
-
-        }
+			MessageBoxResult result = MessageBox.Show("Would you like to confirm the password of this Payment operation? ", "Confirm Payment", MessageBoxButton.YesNoCancel);
+			switch (result)
+			{
+				case MessageBoxResult.Yes:
+					if (Fields.LibMoneyBank > Collections.Workers.Count*100000)//100000= the money each worker will earn per month
+					{
+						//inja bayad meghdare niyaz baraye hoghoogh karmanda faghat check she va bad ham az hesab kam she vali man nemidoonestam cheghade:))))
+						MessageBox.Show("Payment Operation was successfull", "Confirm Payment");
+					}
+					else MessageBox.Show("there is no enough money");
+					break;
+				case MessageBoxResult.No:
+					MessageBox.Show("Payment Operation was Faild", "Confirm Payment");
+					break;
+				case MessageBoxResult.Cancel:
+					MessageBox.Show("Payment Operation was cancled", "Confirm Payment");
+					break;
+			}
+		}
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {

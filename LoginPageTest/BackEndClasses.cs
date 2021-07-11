@@ -19,9 +19,10 @@ using System.Collections.ObjectModel;
 namespace LoginPageTest
 {
 
-    public class User
+    public class User//point : chizi ke be shekle uniqe dar nazar gerefte shode email mibashad pas search ham bar asase email has
+                     // // SQL => primery : email (first field)
     {
-        public static List<User> users = new List<User>();
+
         //fields
         public string UserName { get; set; }
         public string Email { get; set; }
@@ -43,14 +44,13 @@ namespace LoginPageTest
     }
     public class Worker : User
     {
-        public static ObservableCollection<Worker> workers { get; set; } = new ObservableCollection<Worker>();
+        public int Pay { get; } = 100000;
         public Worker(string username, string email, string password, string phonenumber) : base(username, email, password, phonenumber)
         {
             Collections.Workers.Add(this);
         }
     }
-    public class Admin //point : chizi ke be shekle uniqe dar nazar gerefte shode email mibashad pas search ham bar asase email has
-                       // // SQL => primery : email (first field)
+    public class Admin 
     {
         public string UserName = "AdminLib123";
         public string PassWord = "admin";
@@ -60,10 +60,13 @@ namespace LoginPageTest
         }
 
     }
-    class Member : User
+    public class Member : User
     {
-        public ObservableCollection<Member> members { get; set; }
-
+        public bool LateReturn { get; set; }
+        public bool LatePay { get; set; }
+        public ObservableCollection<Book> MyBooks { get; set; }
+        public int NumbersOfBook { get; set; } = 0;
+        public int SubscriptionTimeDay = 0;
         public Member(string username, string email, string password, string phonenumber) : base(username, email, password, phonenumber) { }
 
     }
@@ -72,6 +75,20 @@ namespace LoginPageTest
         public string Name { get; set; }
         public string Author { get; set; }
         public string EditonNumber { get; set; }
+        public int AvailableNumbers { get; set; } // tedad ketab hayi ke available hast ro neshoon mide(ba bool naneveshtam chon tedadesh moheme)
+        public int BorrowedNumbers{get;set;}
+        public int Numbers { get; set; }
+        public Book (string name, string author , string editionnumber ,int number=1)
+        {
+            Name = name;
+            Author = author;
+            EditonNumber = editionnumber;
+            Numbers = number;
+            AvailableNumbers = number;
+            BorrowedNumbers = 0;
+            Collections.AllBooks.Add(this);
+            Collections.AvailableBooks.Add(this);
+        }//dar allBook va availablebook add mishe inja
 
     }
     public static class methods
@@ -204,11 +221,11 @@ namespace LoginPageTest
     }
     public static class Collections
     {
-        internal static ObservableCollection<Book> AllBooks = new ObservableCollection<Book>();
-        internal static ObservableCollection<Book> BorrowedBooks = new ObservableCollection<Book>();
-        internal static ObservableCollection<Book> AvailableBooks = new ObservableCollection<Book>();
+        public static ObservableCollection<Book> AllBooks = new ObservableCollection<Book>();
+        public static ObservableCollection<Book> BorrowedBooks = new ObservableCollection<Book>();
+        public static ObservableCollection<Book> AvailableBooks = new ObservableCollection<Book>();
 
-        internal static ObservableCollection<Worker> Workers = new ObservableCollection<Worker>();
+        public static ObservableCollection<Worker> Workers = new ObservableCollection<Worker>();
 
         internal static ObservableCollection<Member> AllMembers = new ObservableCollection<Member>();
         internal static ObservableCollection<Member> LatePayerMembers = new ObservableCollection<Member>();

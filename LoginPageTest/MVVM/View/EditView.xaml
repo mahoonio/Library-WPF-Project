@@ -112,7 +112,7 @@
                         <Button Width="100" Height="40" 
                                 HorizontalAlignment="Center" 
                                 VerticalAlignment="Center"
-                                Content="REGISTER"
+                                Content="Edit"
                                 FontFamily="helvetica" 
                                 FontWeight="Light" Click="Button_Click"
                                 />

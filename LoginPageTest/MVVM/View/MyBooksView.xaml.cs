@@ -20,34 +20,14 @@ namespace LoginPageTest.MVM.View
     /// </summary>
     public partial class MyBooksView : UserControl
     {
-        public ObservableCollection<User> users { get; set; }
-        public List<User> AllMembers { get; set; }
-        public List<User> LateReturners { get; set; }
-        public List<User> LatePayers { get; set; }
+        public ObservableCollection<Member> members { get; set; }
         public MyBooksView()
         {
-            AllMembers = new List<User>();
-            LateReturners = new List<User>();
-            LatePayers = new List<User>();
-            users = new ObservableCollection<User>();
-            // inja be jaye in ke khodam meghdar bedam bayad maghadir az data base por shan
-            
-        AllMembers.Add(new User("LateReturners1", "mail1", "e1", "12345678909"));
-            AllMembers.Add(new User("LateReturners2", "mail2", "e2", "12345678909"
-           ));
-            AllMembers.Add(new User("LateReturners3", "mail3", "e3", "12345678909"));
-            AllMembers.Add(new User("LatePayers", "mail4", "e4", "12345678909"));
-            AllMembers.Add(new User("LatePayers", "mail5", "e5", "12345678909"));
-            LateReturners.Add(new User("LateReturners1", "mail1", "e1", "12345678909"
-           ));
-            LateReturners.Add(new User("LateReturners2", "mail2", "e2", "12345678909"
-           ));
-            LateReturners.Add(new User("LateReturners3", "mail3", "e3", "12345678909"
-           ));
-            LatePayers.Add(new User("LatePayers", "mail4", "e4", "12345678909"));
-            LatePayers.Add(new User("LatePayers", "mail5", "e5", "12345678909"));
-            users.Add(new User("LateReturners1", "mail1", "e1", "12345678909"));
-            users.Add(new User("LateReturners2", "mail2", "e2", "12345678909")); users.Add(new User("LateReturners3", "mail3", "e3", "12345678909"));
+            members = new ObservableCollection<Member>();
+            for(int i = 0; i < Collections.LateReturnersMembers.Count; i++)
+            {
+                members.Add(Collections.LateReturnersMembers[i]);
+            }
             InitializeComponent();
             DataContext = this;
         }
@@ -56,26 +36,26 @@ namespace LoginPageTest.MVM.View
         }
         private void AllMembersBox_Click_1(object sender, RoutedEventArgs e)
         {
-            users.Clear();
-            for (int i = 0; i < AllMembers.Count; i++)
+            members.Clear();
+            for (int i = 0; i < Collections.AllMembers.Count; i++)
             {
-                users.Add(AllMembers[i]);
+                members.Add(Collections.AllMembers[i]);
             }
         }
         private void LateReturnersBox_Click(object sender, RoutedEventArgs e)
         {
-            users.Clear();
-            for (int i = 0; i < LateReturners.Count; i++)
+            members.Clear();
+            for (int i = 0; i < Collections.LateReturnersMembers.Count; i++)
             {
-                users.Add(LateReturners[i]);
+                members.Add(Collections.LateReturnersMembers[i]);
             }
         }
         private void LatePayersBox_Click(object sender, RoutedEventArgs e)
         {
-            users.Clear();
-            for (int i = 0; i < LatePayers.Count; i++)
+            members.Clear();
+            for (int i = 0; i < Collections.LatePayerMembers.Count; i++)
             {
-                users.Add(LatePayers[i]);
+                members.Add(Collections.LatePayerMembers[i]);
             }
         }
     }

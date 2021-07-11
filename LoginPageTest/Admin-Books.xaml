@@ -24,6 +24,21 @@
             </Border>
             <StackPanel Grid.Row="0">
                 <!--inja liste ketaba ba karaye back-->
+
+                <DockPanel Margin="10">
+                    <TextBox DockPanel.Dock="Top" Margin="0,0,0,10" Name="txtFilter" TextChanged="txtFilter_TextChanged" />
+                    <ListView Name="searchbook">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name ,UpdateSourceTrigger=PropertyChanged}" />
+                                <GridViewColumn Header="Author" Width="120" DisplayMemberBinding="{Binding Author,UpdateSourceTrigger=PropertyChanged}" />
+                                <GridViewColumn Header="EditonNumber" Width="120" DisplayMemberBinding="{Binding EditonNumber,UpdateSourceTrigger=PropertyChanged}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </DockPanel>
+
+
             </StackPanel>
             <StackPanel Grid.Row="1">
                 <Button x:Name="AddBook" Content="AddBook" Background="#004e92"

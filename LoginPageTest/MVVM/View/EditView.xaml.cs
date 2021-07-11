@@ -41,17 +41,21 @@ namespace LoginPageTest.MVM.View
             }
 
         }
+        /// <summary>
 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// 
+        ///////////////////////////////////////inja kolan bayad avaz she vaghti toonestam etelaat ro ersal konam
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (methods.IsValidEmail(emailbox.Text)
             && methods.IsValidPhoneNumber(phonebox.Text)
             && methods.IsValidUserName(usernamebox1.Text)
-            && methods.IsValidPassword(passbox.Password)
-    )
+            && methods.IsValidPassword(passbox.Password))
             {
-                User.users.Add(new User(usernamebox1.Text, emailbox.Text, passbox.Password, phonebox.Text));
-                
+                //Collections.AllMembers.Add(new Member(usernamebox1.Text, emailbox.Text, passbox.Password, phonebox.Text));
             }
             else
             {

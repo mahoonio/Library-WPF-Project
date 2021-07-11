@@ -50,7 +50,7 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <Rectangle  Width="20" Height="20" Margin="0,2,5,2" />
-                                    <TextBlock x:Name="namebox" Text="{Binding name}" />
+                                    <TextBlock x:Name="namebox" Text="{Binding UserName}" />
                                 </StackPanel>
                             </DataTemplate>
                         </ComboBox.ItemTemplate>

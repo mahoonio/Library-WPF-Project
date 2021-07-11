@@ -1,0 +1,26 @@
+﻿<Window x:Class="LoginPageTest.UserMyBooks"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoginPageTest"
+        mc:Ignorable="d"
+        Title="UserMyBooks" Height="500" Width="800" ResizeMode="NoResize"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="10"  Grid.RowSpan="3">
+            <Border.Background>
+                <LinearGradientBrush  >
+                    <GradientStop Color="#ee0979" Offset="0.0"/>
+                    <GradientStop Color="#ff6a00" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            
+        </Border>
+    </Grid>
+</Window>

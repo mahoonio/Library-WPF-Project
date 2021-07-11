@@ -32,6 +32,8 @@ namespace LoginPageTest
         private void AddBtnW_Click(object sender, RoutedEventArgs e)
         {
             // inja worker be data base add mishe ba backend
+            Worker worker = new Worker(UserNameBox.Text, EmailBox.Text, PasswordBox.Text, PhoneNumberBox.Text);
+            MessageBox.Show($"{UserNameBox.Text} Added");
         }
     }
 }

@@ -45,6 +45,7 @@ namespace LoginPageTest
         {
             MemberPannel mpage;
             AdminPannel APage;
+            UserP Upage;
 
             //inja bayad thisworkero befrestam baraye view haye wallet va editview befrestam
 
@@ -66,12 +67,17 @@ namespace LoginPageTest
             {
                 mpage = new MemberPannel();
                 mpage.Show();
-                this.Close();
+                
             }
-            else if(UserNameBox.Text =="admin")
+            else if(UserNameBox.Text =="AdminLib123" && PassBox.Password.Equals("admin"))
             {
                 APage = new AdminPannel();
                 APage.Show();
+            }
+            else if(UserNameBox.Text == "user")
+            {
+                Upage = new UserP();
+                Upage.Show();
             }
 
         }

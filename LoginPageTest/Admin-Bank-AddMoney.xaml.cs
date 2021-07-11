@@ -27,6 +27,24 @@ namespace LoginPageTest
         private void AddMoneyBtn_Click(object sender, RoutedEventArgs e)
         {
             // code e back end marboot be ezafe kardane pool
+            if (methods.IsValidCartNumber(card1box.Text + card2box.Text + card3box.Text + card4box.Text)
+            && methods.IsValidCVV(cvv2box.Text)
+            && methods.IsValidYearAndMonth(yearbox.Text, monthbox.Text))
+            {
+                try
+                {
+                    Fields.LibMoneyBank += int.Parse(MoneyAmmount.Text);
+                    MessageBox.Show("your payment was successful");
+                }
+                catch
+                {
+                    MessageBox.Show("payment faild , enter a correct value for price");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Wrong information");
+            }
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)

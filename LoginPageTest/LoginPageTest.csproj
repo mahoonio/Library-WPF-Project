@@ -117,6 +117,27 @@
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UEditProfile.xaml.cs">
+      <DependentUpon>UEditProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserLibraryBooks.xaml.cs">
+      <DependentUpon>UserLibraryBooks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserMemberShip.xaml.cs">
+      <DependentUpon>UserMemberShip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserMyBooks.xaml.cs">
+      <DependentUpon>UserMyBooks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserP.xaml.cs">
+      <DependentUpon>UserP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserWallet.xaml.cs">
+      <DependentUpon>UserWallet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserWalletAddMoney.xaml.cs">
+      <DependentUpon>UserWalletAddMoney.xaml</DependentUpon>
+    </Compile>
     <Page Include="Admin-Bank-AddMoney.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -193,6 +214,34 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UEditProfile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserLibraryBooks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserMemberShip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserMyBooks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserWallet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserWalletAddMoney.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -248,6 +297,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="BookAddPic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Book lover-bro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Wallet-rafiki.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

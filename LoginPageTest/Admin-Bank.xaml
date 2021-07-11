@@ -11,8 +11,8 @@
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
                 <RowDefinition Height="1.5*"/>
             </Grid.RowDefinitions>
             <Border CornerRadius="10"  Grid.RowSpan="3">
@@ -23,7 +23,7 @@
                     </LinearGradientBrush>
                 </Border.Background>
             </Border>
-            <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" >
                 <!--inja bayad mojoodi az back gerefte beshe-->
                 <TextBlock  FontFamily="Helvetica"
                        FontWeight="Light" FontSize="40"
@@ -32,24 +32,28 @@
                        Background="Transparent"
                        Margin="0,0,0,40"/>
                 <!--narges in textblocke payin ro bayad az backend begiri-->
-                <TextBlock Text="50000t" FontFamily="Helvetica"
+                
+                <ItemsControl ItemsSource="{Binding Fields.LibMoneyBank ,Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding }" FontFamily="Helvetica"
                        FontWeight="Bold" FontSize="40"
                            Foreground="White" 
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                          Margin="0,-20"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                              
+
             </StackPanel>
             <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <!--inja ham bayad meghdar in text box  ro befresti be backend e admin-bank-pay-->
-                <TextBox x:Name="AdminDepositBox" Text="20000" FontFamily="Helvetica" 
-                         FontWeight="ExtraLight" Width="250" Height="40" Foreground="White"
-                         Background="Transparent" BorderThickness="0" FontSize="28"/>
-                <Border Width="250"
-                            Height="2"
-                            Background="White"/>
+
             </StackPanel>
             <StackPanel Grid.Row="2">
-                <Image Source="Gold.png" Width="200" Height="200" VerticalAlignment="Center" HorizontalAlignment="Center"  />
+                <Image Source="Gold.png" Width="200" Height="200" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="300,0"  />
                 <Button x:Name="AdminBankPay"
                         Content="Add Money"
                         Width="125" Height="80"

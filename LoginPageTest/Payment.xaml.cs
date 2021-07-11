@@ -39,8 +39,7 @@ namespace LoginPageTest
         {
             if (methods.IsValidCartNumber(card1box.Text + card2box.Text + card3box.Text + card4box.Text)
                 && methods.IsValidCVV(cvv2box.Text)
-                && methods.IsValidYearAndMonth(yearbox.Text, monthbox.Text)
-    )
+                && methods.IsValidYearAndMonth(yearbox.Text, monthbox.Text))
             {
                 MessageBox.Show("your payment was successful");
             }
@@ -48,6 +47,11 @@ namespace LoginPageTest
             {
                 MessageBox.Show("Wrong information");
             }
+        }
+
+        private void card3box_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
