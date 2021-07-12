@@ -55,7 +55,16 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding EditCommand}"/>
-                
+
+                <Button x:Name="BackBtn" Content="Back"
+                        FontSize="20" 
+                        Width="100"
+                        Height="40"
+                        FontFamily="helvetica"
+                        HorizontalAlignment="Left"
+                        Margin="10 , 280,0,0"
+                        Click="BackBtn_Click"/>
+
 
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Vertical">

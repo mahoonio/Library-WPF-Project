@@ -19,9 +19,12 @@ namespace LoginPageTest
     /// </summary>
     public partial class UEditProfile : Window
     {
-        public UEditProfile()
+        public Member member1;
+        public UEditProfile(Member member)
         {
+            member1 = member;
             InitializeComponent();
+            DataContext = member;
         }
 
         
@@ -33,7 +36,20 @@ namespace LoginPageTest
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
+            // ehtemalan email ro nabayad betoone taghir bede khodet check kon bebin az nazare sql chejooriye 
+            if (methods.IsValidEmail(emailbox.Text)) member1.Email = emailbox.Text;
+            else MessageBox.Show("invalid email");
+            if (methods.IsValidPassword(passbox.Password)) member1.Password = passbox.Password;
+            else MessageBox.Show("invalid PassWord");
+            if (methods.IsValidPhoneNumber(phonebox.Text)) member1.PhoneNumber = phonebox.Text;
+            else MessageBox.Show("invalid Phone number");
+            MessageBox.Show("information successFully changed");
 
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

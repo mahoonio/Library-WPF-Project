@@ -19,9 +19,12 @@ namespace LoginPageTest
     /// </summary>
     public partial class UserWalletAddMoney : Window
     {
-        public UserWalletAddMoney()
+        public Member member1;
+        public UserWalletAddMoney(Member member)
         {
+            member1 = member;
             InitializeComponent();
+            DataContext = member;
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -31,8 +34,20 @@ namespace LoginPageTest
 
         private void AddMoneyBtn_Click(object sender, RoutedEventArgs e)
         {
-            UserWalletAddMoney UwA = new UserWalletAddMoney();
-            UwA.Show();
+            if (methods.IsValidCartNumber(card1box.Text + card2box.Text + card3box.Text + card4box.Text)
+                && methods.IsValidCVV(cvv2box.Text)
+                && methods.IsValidYearAndMonth(yearbox.Text, monthbox.Text))
+            try
+            {
+
+                member1.CashWallet += int.Parse(MoneyAmmount.Text);
+            }
+            catch
+            {
+                MessageBox.Show("wrong value for money!");
+            }
+            
+            
         }
     }
 }

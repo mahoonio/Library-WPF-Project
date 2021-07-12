@@ -19,14 +19,20 @@ namespace LoginPageTest
     /// </summary>
     public partial class UserWallet : Window
     {
-        public UserWallet()
+        public UserWalletAddMoney userWalletAddMoney;
+
+        public Member member1;
+        public UserWallet(Member member)
         {
+            member1 = member;
             InitializeComponent();
+            DataContext = member;
         }
 
         private void AddMoneyBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            userWalletAddMoney = new UserWalletAddMoney(member1);
+            userWalletAddMoney.Show();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)

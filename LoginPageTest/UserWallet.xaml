@@ -31,7 +31,7 @@
                        Background="Transparent"
                        Margin="0,0,0,40"/>
                         <!--narges in textblocke payin ro bayad az backend begiri-->
-                        <TextBlock Text="50000t" FontFamily="Helvetica"
+                        <TextBlock Text="{Binding CashWallet ,Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}" FontFamily="Helvetica"
                        FontWeight="Bold" FontSize="40"
                            Foreground="White" 
                            HorizontalAlignment="Center"

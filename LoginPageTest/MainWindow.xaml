@@ -37,6 +37,8 @@
                     </Border.Background>
                 </Border>
                 <StackPanel VerticalAlignment="Center">
+                    <Button Content="X" x:Name="AppClose" Background="Red" Width="25" Height="25"
+                            Margin="350,-100,0,0" Click="AppClose_Click"/>
                     <Image Source="book.png" Width="65"/>
                     <TextBlock Text="Library" FontWeight="Light" FontFamily="helvetica" FontSize="24"
                                                                             HorizontalAlignment="Center" />

@@ -24,12 +24,19 @@
                 
             </Border>
             <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" >
-                <TextBlock x:Name="DaysLeft" Text="5 Days Left" Foreground="ForestGreen" FontSize="28" FontFamily="helvetica"
+                <TextBlock x:Name="DaysLeft" Text="{Binding SubscriptionTimeDay ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Foreground="ForestGreen" FontSize="28" FontFamily="helvetica"
                            FontWeight="DemiBold"/>
             </StackPanel>
-            <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <StackPanel Grid.Row="1"  HorizontalAlignment="Center" >
                 <Button x:Name="ExtendBtn" Content="Extend" Width="150" Height="100" FontFamily="helvetica" 
                         FontSize="28" Click="ExtendBtn_Click"/>
+                
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+                <Image Source="Membershipp.png" Width="250"/>
+                <Button Content="Back" FontSize="28" Margin="0,-80,600,0" 
+                        x:Name="BackBtn" Width="150" Height="100"
+                        Click="BackBtn_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

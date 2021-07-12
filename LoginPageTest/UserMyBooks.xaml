@@ -5,22 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoginPageTest"
         mc:Ignorable="d"
-        Title="UserMyBooks" Height="500" Width="800" ResizeMode="NoResize"
-        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+        Title="UserMyBooks" Height="462" Width="734" ResizeMode="NoResize"
+        WindowStyle="None" AllowsTransparency="True" Background="Black">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Border CornerRadius="10"  Grid.RowSpan="3">
-            <Border.Background>
-                <LinearGradientBrush  >
-                    <GradientStop Color="#ee0979" Offset="0.0"/>
-                    <GradientStop Color="#ff6a00" Offset="1.0"/>
-                </LinearGradientBrush>
-            </Border.Background>
-            
-        </Border>
+        <Grid>
+            <Border CornerRadius="10">
+                <Border.Background>
+                    <LinearGradientBrush  >
+                        <GradientStop Color="#ee0979" Offset="0.0"/>
+                        <GradientStop Color="#ff6a00" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+            </Border>
+            <StackPanel Margin="10">
+                <ComboBox x:Name="cm" Text="text" Height="26" RenderTransformOrigin="0.49,1.784" ItemsSource="{Binding Mybook, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Rectangle  Width="20" Height="20" Margin="0,2,5,2" />
+
+                                <TextBlock x:Name="namebox" Text="{Binding Name}" />
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+
+                </ComboBox>
+                <WrapPanel Margin="200,300,0,80" HorizontalAlignment="Left" Width="400">
+                    <Button x:Name="btnPrevious" VerticalAlignment="Bottom" Margin="10,0" Click="btnPrevious_Click" Width="100" Content="PreviousBook"/>
+                    <Button x:Name="btnNext" Click="btnNext_Click"  Width="100" Margin="20,0" Content="NextBook"/>
+                    <Button x:Name="XBox" Click="btnBlue_Click" Width="100" Content="Remove" Background="White" Foreground="Black"/>
+                </WrapPanel>
+                <Button x:Name="BackBtn" Content="Back"
+                        Width="100" Height="20" Click="BackBtn_Click"/>
+            </StackPanel>
+        </Grid>
+        
+        
     </Grid>
 </Window>

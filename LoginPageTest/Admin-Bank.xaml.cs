@@ -19,10 +19,12 @@ namespace LoginPageTest
     /// </summary>
     public partial class Admin_Bank : Window
     {
+        public static double MoneyBankAmount { get; set; }
         public Admin_Bank()
         {
             InitializeComponent();
-            DataContext = Fields.LibMoneyBank;
+            MoneyBankAmount = Fields.LibMoneyBank;
+            DataContext = this;
         }
 
         private void AdminBankPay_Click(object sender, RoutedEventArgs e)

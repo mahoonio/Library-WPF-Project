@@ -304,5 +304,8 @@
   <ItemGroup>
     <Resource Include="Wallet-rafiki.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Membershipp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

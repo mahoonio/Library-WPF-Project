@@ -19,14 +19,31 @@ namespace LoginPageTest
     /// </summary>
     public partial class UserMemberShip : Window
     {
-        public UserMemberShip()
+        public Member member1;
+        public UserMemberShip(Member member)
         {
+            member1 = member;
             InitializeComponent();
+            DataContext = member;
         }
 
         private void ExtendBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (member1.CashWallet >= 20000)
+            {
+                member1.CashWallet -= 20000;
+                member1.SubscriptionTimeDay += 10;
+                MessageBox.Show("your SubscriptionTimeDay updated for 10 weeks");
+            }
+            else
+            {
+                MessageBox.Show($"you need {20000 - member1.CashWallet} extra money ");
+            }
+        }
 
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

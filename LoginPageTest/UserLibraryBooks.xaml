@@ -6,23 +6,36 @@
         xmlns:local="clr-namespace:LoginPageTest"
         mc:Ignorable="d"
         Title="UserLibraryBooks" Height="500" Width="800" ResizeMode="NoResize"
-        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
-    <Grid>
-        <Grid>
-            <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <!--<RowDefinition/>
-                    <RowDefinition/>-->
-                </Grid.RowDefinitions>
-                <Border CornerRadius="10"  Grid.RowSpan="1">
-                    <Border.Background>
-                        <LinearGradientBrush  >
-                            <GradientStop Color="#ee0979" Offset="0.0"/>
-                            <GradientStop Color="#ff6a00" Offset="1.0"/>
-                        </LinearGradientBrush>
-                    </Border.Background>
-                    
-                </Border>
-            </Grid>
-    </Grid>
+        WindowStyle="None" AllowsTransparency="True" Background="Black">
+    <DockPanel Margin="10">
+        <StackPanel DockPanel.Dock="Right" Margin="10,0">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="0,0,0,5" />
+                </Style>
+            </StackPanel.Resources>
+            <Button Name="searchbutton" Click="searchbutton_Click" >search</Button>
+            <Button x:Name="amanatbox" Content="amanat" Click="amanatbox_Click" />
+            <CheckBox x:Name="BookName" Content="BookName"  Foreground="White"/>
+            <CheckBox x:Name="AuthorName" Content="AuthorName" Foreground="White" />
+            <TextBlock x:Name="searchBlok" Text="search here:" Foreground="White"/>
+            <TextBox x:Name="searchbox" />
+            <Button x:Name="BackBtn" Content="Back" Margin="0,330,0,0" Click="BackBtn_Click"/>
+
+        </StackPanel>
+        <ListBox Name="bookList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Name , Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBlock Grid.Column="1" Text="{Binding Author , Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
 </Window>

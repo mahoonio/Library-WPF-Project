@@ -16,6 +16,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Globalization;
 using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 namespace LoginPageTest
 {
 
@@ -24,8 +25,9 @@ namespace LoginPageTest
     {
 
         //fields
-        public string UserName { get; set; }
+        
         public string Email { get; set; }
+        public string UserName { get; set; }
         public string Password { get; set; }
         public string PhoneNumber { get; set; }
         //methods
@@ -44,7 +46,7 @@ namespace LoginPageTest
     }
     public class Worker : User
     {
-        public int Pay { get; } = 100000;
+        public int Pay { get; set; } = 100000;
         public Worker(string username, string email, string password, string phonenumber) : base(username, email, password, phonenumber)
         {
             Collections.Workers.Add(this);
@@ -62,12 +64,21 @@ namespace LoginPageTest
     }
     public class Member : User
     {
+        public int CashWallet { get; set; }
         public bool LateReturn { get; set; }
         public bool LatePay { get; set; }
-        public ObservableCollection<Book> MyBooks { get; set; }
-        public int NumbersOfBook { get; set; } = 0;
-        public int SubscriptionTimeDay = 0;
-        public Member(string username, string email, string password, string phonenumber) : base(username, email, password, phonenumber) { }
+        public ObservableCollection<Book> MyBooks;
+        public int NumbersOfBook { get; set; } 
+        public int SubscriptionTimeDay { get; set; }
+        public Member(string username, string email, string password, string phonenumber) : base(username, email, password, phonenumber) 
+        {
+            LateReturn = false;
+            LatePay = false;
+            NumbersOfBook = 0;
+            SubscriptionTimeDay = 10;//masalan avalesh ke ozv mishan 10 hafte sharzh mishe hesabeshoon va har 10 hafte ham 20000 toman pooleshe
+            CashWallet = 0;
+            MyBooks = new ObservableCollection<Book>();
+        }
 
     }
     public class Book
@@ -175,7 +186,7 @@ namespace LoginPageTest
         //field : Email
         public static bool IsValidEmail(string mail)
         {
-            Regex regex = new Regex("^\\w{1,32}@(\\d|\\D){1,8}\\.\\D{1,3}$", RegexOptions.IgnoreCase);
+            Regex regex = new Regex(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
             return regex.IsMatch(mail);
 
         }//checked
@@ -189,12 +200,26 @@ namespace LoginPageTest
         //field: Password
         public static bool IsValidPassword(string pass)//checked
         {
-            Regex regex = new Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*)[a-zA-Z]{8,32}$", RegexOptions.IgnoreCase);
+            Regex regex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*)[a-zA-Z\d]{8,32}$", RegexOptions.IgnoreCase);
             return regex.IsMatch(pass);
 
         }
 
         //// Page MainWindow.xaml => username and password as the same as in the (Register.xaml)Page
+        ///
+
+        //peyda kardane member
+        public static Member FindeMember(string User)
+        {
+            foreach(Member member in Collections.AllMembers)
+            {
+                if(member.UserName.Equals(User))
+                {
+                    return member;
+                }            
+            }
+            return null;
+        }
 
     }
     public static class Extentions
@@ -233,8 +258,208 @@ namespace LoginPageTest
     }
     public static class Fields
     {
-        internal static double LibMoneyBank = 0;
+        internal static double LibMoneyBank { get; set; } = 0;
     }
 
+    public class Data
+    {
+        public static Data data = new Data();
+        public Data()
+        {
+            Collections.AllBooks = new ObservableCollection<Book>();
+            Collections.BorrowedBooks = new ObservableCollection<Book>();
+            Collections.AvailableBooks = new ObservableCollection<Book>();
+            Collections.Workers = new ObservableCollection<Worker>();
+            Collections.AllMembers = new ObservableCollection<Member>();
 
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AP-projects\WpfProjectDb.mdf;Integrated Security=True;Connect Timeout=30");
+            string sql = "select * from Members";
+            sqlcon.Open();
+            SqlCommand cmd = new SqlCommand(sql, sqlcon);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while(dr.Read())
+            {
+                var email = dr["Email"].ToString();
+                var username = dr["Username"].ToString();
+                var phonenum = dr["PhoneNum"].ToString();
+                var password = dr["Password"].ToString();
+                Member Amember = new Member(username, email, password,phonenum);
+                Amember.CashWallet = Convert.ToInt32(dr["CashWallet"]);
+                Amember.LatePay = Convert.ToBoolean(dr["LatePayer"]);
+                Amember.LateReturn = Convert.ToBoolean(dr["LateReturner"]);
+                Amember.NumbersOfBook = Convert.ToInt32(dr["NumbersOfBooks"]);
+                Amember.SubscriptionTimeDay = Convert.ToInt32(dr["SubTimeDay"]);
+                Collections.AllMembers.Add(Amember);
+            }
+            sql = "select * from Books";
+            dr.Close();
+            cmd = new SqlCommand(sql, sqlcon);
+            dr = cmd.ExecuteReader();
+            while(dr.Read())
+            {
+                var Name = dr["Name"].ToString();
+                var Author = dr["Author"].ToString();
+                var EditionNumber = dr["EditionNumber"].ToString();
+                var Number = Convert.ToInt32(dr["Numbers"]);
+                Book book = new Book(Name, Author, EditionNumber, Number);
+                book.AvailableNumbers = Convert.ToInt32(dr["AvailableNumbers"]);
+                book.BorrowedNumbers = Convert.ToInt32(dr["BorrowedNumbers"]);
+                Collections.AllBooks.Add(book);
+            }
+            var Available = Collections.AllBooks.Where(x => x.AvailableNumbers > 0);
+            var Borrowed = Collections.AllBooks.Where(x => x.AvailableNumbers == 0);
+            Collections.AvailableBooks = new ObservableCollection<Book>(Available);
+            Collections.BorrowedBooks = new ObservableCollection<Book>(Borrowed);
+
+            sql =  "select * from Workers";
+            dr.Close();
+            cmd = new SqlCommand(sql, sqlcon);
+            dr = cmd.ExecuteReader();
+            while(dr.Read())
+            {
+                var email = dr["Email"].ToString();
+                var username = dr["Username"].ToString();
+                var phonenum = dr["PhoneNum"].ToString();
+                var password = dr["Password"].ToString();
+                Worker Aworker = new Worker(username, email, password, phonenum);
+                Aworker.Pay = Convert.ToInt32(dr["Pay"]);
+            }
+
+
+
+
+            
+            
+            sqlcon.Close();
+        }
+
+        public void SaveInfo()
+        {
+            try
+            {
+
+
+                using (SqlConnection cnn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AP-projects\WpfProjectDb.mdf;Integrated Security=True;Connect Timeout=30"))
+                using (SqlCommand cmd = new SqlCommand("TRUNCATE TABLE Books", cnn))
+                {
+                    cnn.Open();
+                    cmd.ExecuteNonQuery();
+                    cnn.Close();
+                }
+
+                using (SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AP-projects\WpfProjectDb.mdf;Integrated Security=True;Connect Timeout=30"))
+                {
+                    conn.Open();
+
+
+
+
+                    foreach ( var book in Collections.AllBooks)
+                    {
+                        SqlCommand cmd =
+                        new SqlCommand(
+                            "INSERT INTO Books (Name, Author, EditionNumber, AvailableNumbers, BorrowedNumbers, Numbers) " +
+                            " VALUES (@Name, @Author, @EditionNumber, @AvailableNumbers, @BorrowedNumbers, @Numbers)");
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.Connection = conn;
+                        cmd.Parameters.AddWithValue("@Name", book.Name);
+                        cmd.Parameters.AddWithValue("@Author", book.Author);
+                        cmd.Parameters.AddWithValue("@EditionNumber", book.EditonNumber);
+                        cmd.Parameters.AddWithValue("@AvailableNumbers", book.AvailableNumbers);
+                        cmd.Parameters.AddWithValue("@BorrowedNumbers", book.BorrowedNumbers);
+                        cmd.Parameters.AddWithValue("@Numbers", book.Numbers);
+                        
+
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    conn.Close();
+                }
+                using (SqlConnection cnn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AP-projects\WpfProjectDb.mdf;Integrated Security=True;Connect Timeout=30"))
+                using (SqlCommand cmd = new SqlCommand("TRUNCATE TABLE Workers", cnn))
+                {
+                    cnn.Open();
+                    cmd.ExecuteNonQuery();
+                    cnn.Close();
+                }
+                using (SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AP-projects\WpfProjectDb.mdf;Integrated Security=True;Connect Timeout=30"))
+                {
+                    conn.Open();
+
+
+
+
+                    foreach (var member in Collections.Workers)
+                    {
+                        SqlCommand cmd =
+                        new SqlCommand(
+                            "INSERT INTO Workers (Email, Username, PhoneNum, Password, Pay) " +
+                            " VALUES (@Email, @Username, @PhoneNum, @Password, @pay)");
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.Connection = conn;
+
+                        cmd.Parameters.AddWithValue("@Email", member.Email);
+                        cmd.Parameters.AddWithValue("@Username", member.UserName);
+                        cmd.Parameters.AddWithValue("@PhoneNum", member.PhoneNumber);
+                        cmd.Parameters.AddWithValue("@Password" , member.Password );
+                        cmd.Parameters.AddWithValue("@Pay" , member.Pay);
+                        
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    conn.Close();
+
+                }
+
+                using (SqlConnection cnn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AP-projects\WpfProjectDb.mdf;Integrated Security=True;Connect Timeout=30"))
+                using (SqlCommand cmd = new SqlCommand("TRUNCATE TABLE Members", cnn))
+                {
+                    cnn.Open();
+                    cmd.ExecuteNonQuery();
+                    cnn.Close();
+                }
+                using (SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AP-projects\WpfProjectDb.mdf;Integrated Security=True;Connect Timeout=30"))
+                {
+                    conn.Open();
+
+
+
+
+                    foreach (var member in Collections.AllMembers)
+                    {
+                        SqlCommand cmd =
+                       new SqlCommand(
+                           "INSERT INTO Members (Email, Username, PhoneNum, Password, CashWallet, LatePayer, LateReturner, NumbersOfBooks, SubTimeDay) " +
+                           " VALUES (@Email, @Username, @PhoneNum, @Password, @CashWallet, @LatePayer, @LateReturner, @NumbersOfBooks, @SubTimeDay)");
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.Connection = conn;
+                        cmd.Parameters.AddWithValue("@Email", member.Email);
+                        cmd.Parameters.AddWithValue("@Username", member.UserName);
+                        cmd.Parameters.AddWithValue("@PhoneNum", member.PhoneNumber);
+                        cmd.Parameters.AddWithValue("@Password", member.Password);
+                        cmd.Parameters.AddWithValue("@CashWallet", member.CashWallet );
+                        cmd.Parameters.AddWithValue("@LatePayer", member.LatePay);
+                        cmd.Parameters.AddWithValue("@LateReturner", member.LateReturn);
+                        cmd.Parameters.AddWithValue("@NumbersOfBooks", member.NumbersOfBook);
+                        cmd.Parameters.AddWithValue("@SubTimeDay", member.SubscriptionTimeDay);
+
+
+
+
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    conn.Close();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
 }

@@ -38,7 +38,7 @@ namespace LoginPageTest
         private void SetPhotoBtn_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "jpg files (*.jpg))|(*.jpg)|png files (*.png)|(*.png)";
+            fileDialog.Filter = "jpg files (*.jpg)|(*.jpg)|png files (*.png)|(*.png)";
 
             if(fileDialog.ShowDialog() == true)
             {
@@ -51,10 +51,11 @@ namespace LoginPageTest
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (methods.IsValidEmail(emailbox.Text)
-            && methods.IsValidPhoneNumber(phonebox.Text)
-            && methods.IsValidUserName(usernamebox1.Text)
-            && methods.IsValidPassword(passbox.Password)
+            if (
+                methods.IsValidEmail(emailbox.Text)
+             &&methods.IsValidPhoneNumber(phonebox.Text)
+             &&methods.IsValidUserName(usernamebox1.Text)
+             &&methods.IsValidPassword(passbox.Password)
     )
             {
                 Collections.AllMembers.Add(new Member(usernamebox1.Text, emailbox.Text, passbox.Password, phonebox.Text));
@@ -65,6 +66,11 @@ namespace LoginPageTest
             {
                 MessageBox.Show("Wrong information");
             }
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

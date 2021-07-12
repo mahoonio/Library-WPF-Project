@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("wallet-rafiki.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("membershipp.png")]
 
 

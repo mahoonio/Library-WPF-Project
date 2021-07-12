@@ -10,12 +10,16 @@
         WindowStartupLocation="CenterScreen" >
     <Grid>
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="593*"/>
+                <ColumnDefinition Width="207*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1.5*"/>
                 <RowDefinition Height="0.5*"/>
                 <RowDefinition Height="1.5*"/>
             </Grid.RowDefinitions>
-            <Border CornerRadius="10"  Grid.RowSpan="3">
+            <Border CornerRadius="10"  Grid.RowSpan="3" Grid.ColumnSpan="2">
                 <Border.Background>
                     <LinearGradientBrush x:Name="RegisterPage">
                         <GradientStop Color="#000428" Offset="0.0"/>
@@ -23,7 +27,7 @@
                     </LinearGradientBrush>
                 </Border.Background>
             </Border>
-            <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="268,63,60.949,63" >
                 <!--inja bayad mojoodi az back gerefte beshe-->
                 <TextBlock  FontFamily="Helvetica"
                        FontWeight="Light" FontSize="40"
@@ -32,8 +36,9 @@
                        Background="Transparent"
                        Margin="0,0,0,40"/>
                 <!--narges in textblocke payin ro bayad az backend begiri-->
-                
-                <ItemsControl ItemsSource="{Binding Fields.LibMoneyBank ,Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}">
+                <TextBlock Text="{Binding MoneyBankAmount}" 
+                           FontSize="18" Margin="-50" Foreground="White" />
+                <!--<ItemsControl ItemsSource="{Binding ,Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding }" FontFamily="Helvetica"
@@ -44,15 +49,13 @@
                          Margin="0,-20"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
-                </ItemsControl>
-                              
-
+                </ItemsControl>-->
             </StackPanel>
-            <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="400,36,192.949,36">
                 <!--inja ham bayad meghdar in text box  ro befresti be backend e admin-bank-pay-->
 
             </StackPanel>
-            <StackPanel Grid.Row="2">
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
                 <Image Source="Gold.png" Width="200" Height="200" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="300,0"  />
                 <Button x:Name="AdminBankPay"
                         Content="Add Money"

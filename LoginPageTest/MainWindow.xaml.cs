@@ -24,7 +24,7 @@ namespace LoginPageTest
 
         public MainWindow()
         {
-
+            Data data = new Data();
             InitializeComponent();
         }
 
@@ -38,7 +38,7 @@ namespace LoginPageTest
         {
             Register RPage = new Register();
             RPage.Show();
-            this.Close();
+            //this.Close();
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
@@ -74,12 +74,22 @@ namespace LoginPageTest
                 APage = new AdminPannel();
                 APage.Show();
             }
-            else if(UserNameBox.Text == "user")
+            else if(methods.FindeMember(UserNameBox.Text)!=null)
             {
-                Upage = new UserP();
+                Member member = methods.FindeMember((UserNameBox.Text));
+                Upage = new UserP(member);
                 Upage.Show();
             }
+            else
+            {
+                MessageBox.Show("wrong information");
+            }
+        }
 
+        private void AppClose_Click(object sender, RoutedEventArgs e)
+        {
+            Data.data.SaveInfo();
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

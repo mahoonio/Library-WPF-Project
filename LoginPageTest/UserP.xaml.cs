@@ -19,40 +19,44 @@ namespace LoginPageTest
     /// </summary>
     public partial class UserP : Window
     {
+        public Member member;
         UserWallet Uw;
         UserMemberShip userMemberShip;
-        public UserP()
+        public UserP(Member member1)
         {
+            MessageBox.Show($"hi dear{member1.UserName}");
+            member = member1;
             InitializeComponent();
+            DataContext = member;
         }
 
         private void WalletBtn_Click(object sender, RoutedEventArgs e)
         {
-            Uw = new UserWallet();
+            Uw = new UserWallet(member);
             Uw.Show();
         }
 
         private void MShipBtn_Click(object sender, RoutedEventArgs e)
         {
-            userMemberShip = new UserMemberShip();
+            userMemberShip = new UserMemberShip(member);
             userMemberShip.Show();
         }
 
         private void EprofileBtn_Click(object sender, RoutedEventArgs e)
         {
-            UEditProfile Ep = new UEditProfile();
+            UEditProfile Ep = new UEditProfile(member);
             Ep.Show();
         }
 
         private void LbooksBtn_Click(object sender, RoutedEventArgs e)
         {
-            UserLibraryBooks ULb = new UserLibraryBooks();
+            UserLibraryBooks ULb = new UserLibraryBooks(member);
             ULb.Show();
         }
 
         private void Mboo_Click(object sender, RoutedEventArgs e)
         {
-            UserMyBooks UMb = new UserMyBooks();
+            UserMyBooks UMb = new UserMyBooks(member);
             UMb.Show();
         }
 

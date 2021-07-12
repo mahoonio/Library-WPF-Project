@@ -30,5 +30,9 @@ namespace LoginPageTest
                 DragMove();
         }
 
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
