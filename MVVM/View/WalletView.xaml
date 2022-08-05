@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="LoginPageTest.MVM.View.WalletView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LoginPageTest.MVVM.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="#1b1b1b">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Border CornerRadius="10"  Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush x:Name="RegisterPage">
+                        <GradientStop Color="#ddd6f3" Offset="0.0"/>
+                        <GradientStop Color="#ef629f" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock  FontFamily="Helvetica"
+                       FontWeight="Bold" FontSize="40"
+                       Text="Cash in wallet:"
+                       Foreground="White"
+                       Background="Transparent"
+                       Margin="0,0,0,40"/>
+                <!--narges in textblocke payin ro bayad az backend begiri-->
+                <TextBlock Text="50000t" FontFamily="Helvetica"
+                       FontWeight="Bold" FontSize="40"
+                           Foreground="White" 
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                         Margin="0,-20"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1">
+                <Image Source="Wallet-rafiki.png" Width="500" Height="300"/>
+            </StackPanel>
+            
+        </Grid>  
+    </Grid>
+</UserControl>

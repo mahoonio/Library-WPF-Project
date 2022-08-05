@@ -1,0 +1,40 @@
+﻿<Window x:Class="LoginPageTest.UserLibraryBooks"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoginPageTest"
+        mc:Ignorable="d"
+        Title="UserLibraryBooks" Height="500" Width="800" ResizeMode="NoResize"
+        WindowStyle="None" AllowsTransparency="True" Background="Black">
+    <DockPanel Margin="10">
+        <StackPanel DockPanel.Dock="Right" Margin="10,0">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="0,0,0,5" />
+                </Style>
+            </StackPanel.Resources>
+            <Button Name="searchbutton" Click="searchbutton_Click" >search</Button>
+            <Button x:Name="amanatbox" Content="amanat" Click="amanatbox_Click" />
+            <CheckBox x:Name="BookName" Content="BookName"  Foreground="White"/>
+            <CheckBox x:Name="AuthorName" Content="AuthorName" Foreground="White" />
+            <TextBlock x:Name="searchBlok" Text="search here:" Foreground="White"/>
+            <TextBox x:Name="searchbox" />
+
+        </StackPanel>
+        <ListBox Name="bookList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Name , Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBlock Grid.Column="1" Text="{Binding Author , Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</Window>

@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="LoginPageTest.MVM.View.MyBooksView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LoginPageTest.MVVM.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="#1b1b1b">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Border CornerRadius="10"  Grid.ColumnSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush x:Name="RegisterPage">
+                        <GradientStop Color="#aa076b" Offset="0.0"/>
+                        <GradientStop Color=" #ff5e62" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <StackPanel Grid.Column="0">
+                <Button x:Name="AllMembersBox" Content="All Members" FontSize="26"
+Width="150" Height="80" Margin="0 , 20" Click="AllMembersBox_Click_1"/>
+                <Button x:Name="LateReturnersBox" Content="Late Returners" FontSize="20"
+Width="150" Height="80" Margin="0 , 20" Click="LateReturnersBox_Click"/>
+                <Button x:Name="LatePayersBox" Content="Late Payers" FontSize="20"
+Width="150" Height="80" Margin="0 , 20" Click="LatePayersBox_Click"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <!--list ro bayad inja bezani-->
+                <Grid>
+                    <ScrollViewer>
+                        <ItemsControl ItemsSource="{Binding members, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="{Binding UserName}"/>
+                                        <TextBlock Grid.Column="1" Text="{Binding Email}"/>
+                                        <TextBlock Grid.Column="2" Text="{Binding Password}"/>
+                                        <TextBlock Grid.Column="2" Text="{Binding PhoneNumber}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
